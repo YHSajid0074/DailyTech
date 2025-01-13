@@ -7,7 +7,7 @@ import java.util.List;
 public record PostsRequestDto(
         String title,
         List<MultipartFile> imageUrls,
-        Long userId
+        String username
 ){
 
 }

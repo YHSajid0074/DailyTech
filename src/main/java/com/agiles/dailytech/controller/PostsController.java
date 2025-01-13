@@ -41,4 +41,10 @@ public class PostsController {
     public ResponseEntity<List<PostsResponseDto>> getPosts(){
         return ResponseEntity.ok(postsService.getAllPosts());
     }
+
+    @PatchMapping
+    public ResponseEntity<String>update(@PathVariable Long id,@ModelAttribute PostsRequestDto postsRequestDto) throws IOException {
+        postsService.savePosts(postsRequestDto,postsRequestDto.imageUrls());
+        return ResponseEntity.ok().body("Posts updated");
+    }
 }
