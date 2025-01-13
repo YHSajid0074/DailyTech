@@ -14,8 +14,6 @@ public record UserUpdateRequestDto(
 
         Long sold,
 
-        Long propertyAdded,
-
         String profession,
 
         String fullname

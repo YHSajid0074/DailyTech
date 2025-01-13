@@ -23,10 +23,6 @@ public interface CustomUserResponseDTO {
 
     String getBio();
 
-    Long getSold();
-
-    Long getPropertyAdded();
-
     String getProfession();
 
     String getFullname();

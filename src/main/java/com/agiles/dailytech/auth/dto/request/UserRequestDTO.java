@@ -30,10 +30,6 @@ public record UserRequestDTO(
 
         String bio,
 
-        Long sold,
-
-        Long propertyAdded,
-
         String profession,
 
         String fullname

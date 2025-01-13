@@ -43,10 +43,6 @@ public class User {
 
     private String bio;
 
-    private Long sold;
-
-    private Long propertyAdded;
-
     private String profession;
 
     private String fullname;
@@ -140,22 +136,6 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
-    }
-
-    public Long getSold() {
-        return sold;
-    }
-
-    public void setSold(Long sold) {
-        this.sold = sold;
-    }
-
-    public Long getPropertyAdded() {
-        return propertyAdded;
-    }
-
-    public void setPropertyAdded(Long propertyAdded) {
-        this.propertyAdded = propertyAdded;
     }
 
     public String getProfession() {

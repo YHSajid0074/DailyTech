@@ -53,10 +53,10 @@ public class UserServiceIMPL implements UserService {
        user.setBio(userRequestDTO.bio() );
        user.setAddress( userRequestDTO.address() );
        user.setPhone(userRequestDTO.phone() );
-       user.setSold(userRequestDTO.sold());
+
        user.setProfession(userRequestDTO.profession());
        user.setProfilpic(profileImageUrl);
-       user.setPropertyAdded(userRequestDTO.propertyAdded());
+
        user.setFullname(userRequestDTO.fullname());
 
        return user;
@@ -123,10 +123,10 @@ public class UserServiceIMPL implements UserService {
         user.setBio(userRequestDTO.bio() );
         user.setAddress( userRequestDTO.address() );
         user.setPhone(userRequestDTO.phone() );
-        user.setSold(userRequestDTO.sold());
+
         user.setProfession(userRequestDTO.profession());
         user.setProfilpic(profileImageUrl);
-        user.setPropertyAdded(userRequestDTO.propertyAdded());
+
         user.setFullname(userRequestDTO.fullname());
 
         return user;
