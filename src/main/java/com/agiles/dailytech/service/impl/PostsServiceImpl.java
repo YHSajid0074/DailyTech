@@ -37,7 +37,8 @@ public class PostsServiceImpl implements PostsService {
             imageUrls.add(imageUrl);
         }
 
-        posts.setUser(userRepo.findByUsername(postsRequestDto.username()));
+//        posts.setUser(userRepo.findByUsername(postsRequestDto.username()));
+        posts.setUser(userRepo.findByUsername("Sajid"));
         posts.setTitle(postsRequestDto.title());
         posts.setImageUrls(imageUrls);
          postsRepo.save(posts);
