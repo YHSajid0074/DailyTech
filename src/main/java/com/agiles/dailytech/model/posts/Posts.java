@@ -23,20 +23,20 @@ public class Posts {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "votes_id", referencedColumnName = "id")
-    private Votes votes;
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "votes_id", referencedColumnName = "id")
+//    private Votes votes;
 
 
     public Posts() {
     }
 
 
-    public Posts(String title, List<String> imageUrls, User user, Votes votes) {
+    public Posts(String title, List<String> imageUrls, User user) {
         this.title = title;
         this.imageUrls = imageUrls;
         this.user = user;
-        this.votes = votes;
+//        this.votes = votes;
     }
 
     // Getters and Setters
@@ -64,10 +64,10 @@ public class Posts {
         this.user = user;
     }
 
-    public Votes getVotes() {
-        return votes;
-    }
-    public void setVotes(Votes votes) {
-        this.votes = votes;
-    }
+//    public Votes getVotes() {
+//        return votes;
+//    }
+//    public void setVotes(Votes votes) {
+//        this.votes = votes;
+//    }
 }
