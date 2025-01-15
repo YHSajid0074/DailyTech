@@ -20,18 +20,18 @@ public class Posts {
     private List<String> imageUrls;
 
     @ManyToOne
-    @JoinColumn(name = "user_id") // Foreign key column in the Product table
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "votes_id", referencedColumnName = "id")
     private Votes votes;
 
-    // No-args constructor
+
     public Posts() {
     }
 
-    // All-args constructor
+
     public Posts(String title, List<String> imageUrls, User user, Votes votes) {
         this.title = title;
         this.imageUrls = imageUrls;
