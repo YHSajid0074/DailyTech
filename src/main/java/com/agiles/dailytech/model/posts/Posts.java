@@ -1,6 +1,7 @@
 package com.agiles.dailytech.model.posts;
 
 import com.agiles.dailytech.auth.model.User;
+import com.agiles.dailytech.model.votes.Votes;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,15 +23,20 @@ public class Posts {
     @JoinColumn(name = "user_id") // Foreign key column in the Product table
     private User user;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "votes_id", referencedColumnName = "id")
+    private Votes votes;
+
     // No-args constructor
     public Posts() {
     }
 
     // All-args constructor
-    public Posts(String title, List<String> imageUrls, User user) {
+    public Posts(String title, List<String> imageUrls, User user, Votes votes) {
         this.title = title;
         this.imageUrls = imageUrls;
         this.user = user;
+        this.votes = votes;
     }
 
     // Getters and Setters
@@ -56,5 +62,12 @@ public class Posts {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Votes getVotes() {
+        return votes;
+    }
+    public void setVotes(Votes votes) {
+        this.votes = votes;
     }
 }
