@@ -24,7 +24,7 @@ public class JWTService {
     @Value( "thisIsA64ByteSecretKey12345678901234567890123456789012345678901234567890" )
     private String secretKey;
 
-    @Value( "86400000" )
+    @Value( "8640000000000" )
     private Long jwtExpiration;
 
     public < T > T extractClaim( String token, Function<Claims, T > claimsResolver ) {

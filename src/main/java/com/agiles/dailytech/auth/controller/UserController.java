@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @PostMapping(value = "/add", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public ResponseEntity< String > create(@ModelAttribute UserRequestDTO requestDto) throws IOException {
-        userService.create(requestDto,requestDto.profilpic());
+    public ResponseEntity< String > create(@ModelAttribute UserRequestDTO requestDto) {
+        userService.create(requestDto);
         return ResponseEntity.ok("Successfully created user");
     }
 
