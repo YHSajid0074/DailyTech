@@ -64,6 +64,7 @@ public class Posts {
         this.user = user;
     }
 
+
     public Votes getVotes() {
         return votes;
     }
