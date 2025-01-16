@@ -12,19 +12,20 @@ public class Votes {
     private Long upvotes;
     private Long downvotes;
     private Long totalvotes;
-//
-//    @OneToOne(mappedBy = "votes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private Posts post;
+
+
+    @OneToOne(mappedBy = "votes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Posts post;
 
     public Votes() {
     }
 
-    public Votes(Long id, Long upvotes, Long downvotes, Long totalvotes) {
+    public Votes(Long id, Long upvotes, Long downvotes, Long totalvotes,Posts post) {
         this.id = id;
         this.upvotes = upvotes;
         this.downvotes = downvotes;
         this.totalvotes = totalvotes;
-//        this.post = post;
+        this.post = post;
     }
 
     public Long getId() {
@@ -59,11 +60,11 @@ public class Votes {
         this.totalvotes = totalvotes;
     }
 
-//    public Posts getPost() {
-//        return post;
-//    }
-//
-//    public void setPost(Posts post) {
-//        this.post = post;
-//    }
+    public Posts getPost() {
+        return post;
+    }
+
+    public void setPost(Posts post) {
+        this.post = post;
+    }
 }
