@@ -113,7 +113,7 @@ public class UserServiceIMPL implements UserService {
     }
 
     @Override
-    public CustomUserResponseDTO searchByUsername(String username) {
+    public List<CustomUserResponseDTO> searchByUsername(String username) {
         return userRepository.searchByUsername( username );
     }
 

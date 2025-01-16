@@ -63,7 +63,7 @@ public class UserController {
     }
 
     @GetMapping("search/{username}")
-    public ResponseEntity<CustomUserResponseDTO> searchByUserName(@PathVariable("username") String username) {
+    public ResponseEntity<List<CustomUserResponseDTO>> searchByUserName(@PathVariable("username") String username) {
         return ResponseEntity.ok(userService.searchByUsername(username));
     }
     @MessageMapping("/user.addUser")

@@ -9,6 +9,7 @@ import com.agiles.dailytech.auth.model.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface UserService {
 
@@ -16,5 +17,5 @@ public interface UserService {
     public CustomUserResponseDTO readOne(Long id );
     public User setUserRoles(UserRoleRequestDTO requestDTO );
     public void updateUser(Long id, UserUpdateRequestDto userRequestDTO, MultipartFile file,MultipartFile coverUrl) throws IOException;
-    public CustomUserResponseDTO searchByUsername(String username);
+    public List<CustomUserResponseDTO> searchByUsername(String username);
 }
