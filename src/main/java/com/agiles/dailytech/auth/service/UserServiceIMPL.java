@@ -44,20 +44,20 @@ public class UserServiceIMPL implements UserService {
    }
 
 
-   public User ConvertToEntity(User user, UserRequestDTO userRequestDTO, MultipartFile profilepic) throws IOException {
-       Map<String, Object> heroUploadResult = cloudneryImageService.upload(profilepic);
-       String profileImageUrl = (String) heroUploadResult.get("secure_url");
+   public User ConvertToEntity(User user, UserRequestDTO userRequestDTO){
+//       Map<String, Object> heroUploadResult = cloudneryImageService.upload(profilepic);
+//       String profileImageUrl = (String) heroUploadResult.get("secure_url");
        user.setUsername( userRequestDTO.username() );
        user.setEmail( userRequestDTO.email() );
        user.setPassword( passwordEncoder.encode(userRequestDTO.password() ));
-       user.setBio(userRequestDTO.bio() );
-       user.setAddress( userRequestDTO.address() );
-       user.setPhone(userRequestDTO.phone() );
+//       user.setBio(userRequestDTO.bio() );
+//       user.setAddress( userRequestDTO.address() );
+//       user.setPhone(userRequestDTO.phone() );
 
-       user.setProfession(userRequestDTO.profession());
-       user.setProfilpic(profileImageUrl);
+//       user.setProfession(userRequestDTO.profession());
+//       user.setProfilpic(profileImageUrl);
 
-       user.setFullname(userRequestDTO.fullname());
+//       user.setFullname(userRequestDTO.fullname());
 
        return user;
    }
@@ -65,9 +65,9 @@ public class UserServiceIMPL implements UserService {
 
 
 
-    public void create(UserRequestDTO requestDto, MultipartFile heroImageFile) throws IOException {
+    public void create(UserRequestDTO requestDto) {
 
-       User user = ConvertToEntity(new User(), requestDto, heroImageFile);
+       User user = ConvertToEntity(new User(), requestDto);
 
        userRepository.save(user);
 
