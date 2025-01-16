@@ -58,7 +58,7 @@ public class UserController {
 
     @PutMapping(value = "/update", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<String>Update(@RequestParam Long id, @ModelAttribute UserUpdateRequestDto requestDTO ) throws IOException {
-        userService.updateUser(id,requestDTO, requestDTO.profilpic());
+        userService.updateUser(id,requestDTO, requestDTO.profilpic(), requestDTO.coverPic());
         return ResponseEntity.ok("Successfully updated user");
     }
 

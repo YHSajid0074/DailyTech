@@ -15,6 +15,6 @@ public interface UserService {
     public void create(UserRequestDTO requestDto);
     public CustomUserResponseDTO readOne(Long id );
     public User setUserRoles(UserRoleRequestDTO requestDTO );
-    public void updateUser(Long id, UserUpdateRequestDto userRequestDTO, MultipartFile file) throws IOException;
+    public void updateUser(Long id, UserUpdateRequestDto userRequestDTO, MultipartFile file,MultipartFile coverUrl) throws IOException;
     public CustomUserResponseDTO searchByUsername(String username);
 }

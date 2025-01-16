@@ -16,7 +16,9 @@ public record UserUpdateRequestDto(
 
         String profession,
 
-        String fullname
+        String fullname,
+
+        MultipartFile coverPic
 ) {
 
 }

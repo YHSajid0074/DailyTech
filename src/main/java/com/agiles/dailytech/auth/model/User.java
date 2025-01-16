@@ -49,6 +49,8 @@ public class User {
 
     private Status status;
 
+    private String coverPicture;
+
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -162,5 +164,12 @@ public class User {
         this.status = status;
     }
 
+    public String getCoverPicture() {
+        return coverPicture;
+    }
+
+    public void setCoverPicture(String coverPicture) {
+        this.coverPicture = coverPicture;
+    }
 
 }
