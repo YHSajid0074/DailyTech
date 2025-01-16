@@ -123,7 +123,7 @@ public class UserServiceIMPL implements UserService {
         Map<String, Object> Coverpic = cloudneryImageService.upload(coverpic);
 
         String profileImageUrl = (String) heroUploadResult.get("secure_url");
-        String CoverUrl=(String) heroUploadResult.get("secure_url");
+        String CoverUrl=(String) Coverpic.get("secure_url");
         user.setBio(userRequestDTO.bio() );
         user.setAddress( userRequestDTO.address() );
         user.setPhone(userRequestDTO.phone() );
