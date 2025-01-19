@@ -1,10 +1,13 @@
 package com.agiles.dailytech.model.posts;
 
 import com.agiles.dailytech.auth.model.User;
+import com.agiles.dailytech.model.discussion.Discussion;
 import com.agiles.dailytech.model.votes.Votes;
 import jakarta.persistence.*;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Posts {
@@ -26,6 +29,17 @@ public class Posts {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "votes_id", referencedColumnName = "id")
     private Votes votes;
+
+    @OneToMany(mappedBy = "posts", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Discussion> discussions = new LinkedHashSet<>();
+
+    public Set<Discussion> getDiscussions() {
+        return discussions;
+    }
+
+    public void setDiscussions(Set<Discussion> discussions) {
+        this.discussions = discussions;
+    }
 
 
     public Posts() {

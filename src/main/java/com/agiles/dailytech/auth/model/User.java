@@ -54,7 +54,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-     private Set<Posts>properties;
+     private Set<Posts>posts;
 
     @ManyToMany(
             cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH },
@@ -172,4 +172,11 @@ public class User {
         this.coverPicture = coverPicture;
     }
 
+    public Set<Posts> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<Posts> posts) {
+        this.posts = posts;
+    }
 }
