@@ -58,12 +58,12 @@ public class UserController {
 
     @PutMapping(value = "/update", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<String>Update(@RequestParam Long id, @ModelAttribute UserUpdateRequestDto requestDTO ) throws IOException {
-        userService.updateUser(id,requestDTO, requestDTO.profilpic());
+        userService.updateUser(id,requestDTO, requestDTO.profilpic(), requestDTO.coverPic());
         return ResponseEntity.ok("Successfully updated user");
     }
 
     @GetMapping("search/{username}")
-    public ResponseEntity<CustomUserResponseDTO> searchByUserName(@PathVariable("username") String username) {
+    public ResponseEntity<List<CustomUserResponseDTO>> searchByUserName(@PathVariable("username") String username) {
         return ResponseEntity.ok(userService.searchByUsername(username));
     }
     @MessageMapping("/user.addUser")

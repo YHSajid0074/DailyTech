@@ -102,30 +102,35 @@ public class UserServiceIMPL implements UserService {
 
 
     @Override
-    public void updateUser(Long id, UserUpdateRequestDto userRequestDTO, MultipartFile heroImageFile) throws IOException {
+    public void updateUser(Long id, UserUpdateRequestDto userRequestDTO, MultipartFile heroImageFile,MultipartFile cover) throws IOException {
 
        User user=userRepository.findById( id ).get();
 
-       User updateUser = ConvertToEntityUpdate(user, userRequestDTO, heroImageFile);
+       User updateUser = ConvertToEntityUpdate(user, userRequestDTO, heroImageFile,cover);
 
        userRepository.save( updateUser );
 
     }
 
     @Override
-    public CustomUserResponseDTO searchByUsername(String username) {
+    public List<CustomUserResponseDTO> searchByUsername(String username) {
         return userRepository.searchByUsername( username );
     }
 
-    public User ConvertToEntityUpdate(User user,UserUpdateRequestDto userRequestDTO,MultipartFile profilepic) throws IOException {
+    public User ConvertToEntityUpdate(User user,UserUpdateRequestDto userRequestDTO,MultipartFile profilepic,MultipartFile coverpic) throws IOException {
         Map<String, Object> heroUploadResult = cloudneryImageService.upload(profilepic);
+
+        Map<String, Object> Coverpic = cloudneryImageService.upload(coverpic);
+
         String profileImageUrl = (String) heroUploadResult.get("secure_url");
+        String CoverUrl=(String) Coverpic.get("secure_url");
         user.setBio(userRequestDTO.bio() );
         user.setAddress( userRequestDTO.address() );
         user.setPhone(userRequestDTO.phone() );
 
         user.setProfession(userRequestDTO.profession());
         user.setProfilpic(profileImageUrl);
+        user.setCoverPicture(CoverUrl);
 
         user.setFullname(userRequestDTO.fullname());
 

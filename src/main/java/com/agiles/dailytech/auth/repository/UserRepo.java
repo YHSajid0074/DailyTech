@@ -22,9 +22,8 @@ public interface UserRepo extends JpaRepository<User, Long > {
     User findByUsernameOrEmail(String username, String email );
 
     @Query("""
-            SELECT u FROM User u where u.username=:username
-            """)
-    CustomUserResponseDTO searchByUsername(String username );
+            SELECT u FROM User u where u.username LIKE %:username%""")
+    List<CustomUserResponseDTO > searchByUsername(String username );
 
     boolean existsByEmail( String email );
 
