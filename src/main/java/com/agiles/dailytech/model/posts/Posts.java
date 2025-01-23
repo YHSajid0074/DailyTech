@@ -4,11 +4,14 @@ import com.agiles.dailytech.auth.model.User;
 import com.agiles.dailytech.model.discussion.Discussion;
 import com.agiles.dailytech.model.votes.Votes;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-
+@Getter
+@Setter
 @Entity
 public class Posts {
     @Id
@@ -58,31 +61,31 @@ public class Posts {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public List<String> getImageUrls() {
-        return imageUrls;
-    }
-
-    public void setImageUrls(List<String> imageUrls) {
-        this.imageUrls = imageUrls;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-
-    public Votes getVotes() {
-        return votes;
-    }
-    public void setVotes(Votes votes) {
-        this.votes = votes;
-    }
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public List<String> getImageUrls() {
+//        return imageUrls;
+//    }
+//
+//    public void setImageUrls(List<String> imageUrls) {
+//        this.imageUrls = imageUrls;
+//    }
+//
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//
+//    public Votes getVotes() {
+//        return votes;
+//    }
+//    public void setVotes(Votes votes) {
+//        this.votes = votes;
+//    }
 }
