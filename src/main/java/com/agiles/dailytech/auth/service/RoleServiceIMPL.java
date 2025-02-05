@@ -44,13 +44,11 @@ public class RoleServiceIMPL implements RoleService {
         return "Role Deleted Successfully.";
     }
 
-
     private RoleRequestDTO cleanDTOFields( RoleRequestDTO requestDto ) {
         return new RoleRequestDTO(
                 requestDto.roleType()
         );
     }
-
 
     private void validate(RoleRequestDTO requestDto, Role role ) {
         if ( Objects.isNull( role ) ) {
